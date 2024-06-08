@@ -30,7 +30,7 @@ platforms:
 parts:
   pika-backup:
     plugin: rust
-    source: https://gitlab.gnome.org/World/pika-backup/-/archive/v0.7.2/pika-backup-v$SNAPCRAFT_PROJECT_VERSION.tar.gz
+    source: https://gitlab.gnome.org/World/pika-backup/-/archive/v$SNAPCRAFT_PROJECT_VERSION/pika-backup-v$SNAPCRAFT_PROJECT_VERSION.tar.gz
     stage-packages:
       - borgbackup
       #- libfuse3-3 # not sure if necessary yet, but the flatpak manifest downloads it
