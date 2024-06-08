@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Pika Backup
+Comment=Keep your data safe
+Exec=pika
+Icon=${SNAP}/meta/gui/pika.svg
+Terminal=false
+Type=Application
+Categories=Utilities;

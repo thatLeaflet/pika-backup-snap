@@ -1,0 +1,57 @@
+name: pika-backup
+title: Pika Backup (unofficial)
+version: 0.7.2
+license: GPL-3.0
+website: https://apps.gnome.org/PikaBackup/
+source-code: https://gitlab.gnome.org/World/pika-backup
+issues: https://github.com/thatLeaflet/pika-backup-snap/issues
+type: app
+icon: snap/gui/pika.svg
+summary: Keep your data safe
+description: |
+  Doing backups the easy way. Plugin your USB drive and let the Pika do the rest for you.
+  
+  Pika Backup is designed to save your personal data and does not support complete system recovery. Pika Backup is powered by the well-tested BorgBackup software. 
+  
+  Note: This is an unofficial repackaging and is not endorsed by the upstream project.
+
+confinement: strict
+base: core24
+compression: lzo
+grade: stable
+platforms:
+  amd64:
+    build-on: [amd64]
+    build-for: [amd64]
+#  arm64:
+#    build-on: [amd64]
+#    build-for: [arm64]
+
+parts:
+  pika-backup:
+    plugin: rust
+    source: https://gitlab.gnome.org/World/pika-backup/-/archive/v0.7.2/pika-backup-v$SNAPCRAFT_PROJECT_VERSION.tar.gz
+    stage-packages:
+      - borgbackup
+      #- libfuse3-3 # not sure if necessary yet, but the flatpak manifest downloads it
+
+slots:
+  dbus-pika-backup:
+    interface: dbus
+    bus: session
+    name: org.gnome.World.PikaBackup
+
+apps:
+  pika-backup:
+    command: bin/pika-backup
+    extensions: [gnome]
+    slots:
+      - dbus-pika-backup
+    plugs:
+      # not sure which plugs are necessary at this point
+      - fuse-support
+      - home
+      - mount-control
+      - mount-observe
+      - network-status
+      - removable-media # no auto-connect
