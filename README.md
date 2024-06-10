@@ -17,6 +17,6 @@ How to set up snapcraft
 
 How to build the snap
 - Enter a nice working directory (e.g. ~/projects)
-- Download repo: run `git clone https://github.com/thatLeaflet/pika-backup-snap.git && cd pika-backup-snap`
+- Download repo: run `git clone https://github.com/thatLeaflet/pika-backup-snap.git && cd ./pika-backup-snap`
 - Build the snap: run `SNAPCRAFT_ENABLE_EXPERIMENTAL_EXTENSIONS=1 snapcraft`
-- Install the snap: run `sudo snap install ./<file-name> --dangerous`
+- Install the snap: run `sudo snap install --dangerous ./pika-backup_*.snap`
