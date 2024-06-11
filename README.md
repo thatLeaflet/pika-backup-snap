@@ -1,4 +1,4 @@
-## WIP, not working yet
+## WIP, not working yet (issue with installing Borgbackup in the snap)
 
 Note: This is an unofficial repackaging and is not endorsed by the upstream project. The upstream Pika Backup project can be found [here](https://gitlab.gnome.org/World/pika-backup).
 
